@@ -27,10 +27,8 @@ public class Dijkstra {
     public static void dijkstra(int v , ArrayList<ArrayList<ArrayList<Integer>>> adj, int s, int d){
         PriorityQueue<Pair> pq = new PriorityQueue<>((x,y)->x.distance-y.distance);
         int [] distance = new int[v];
-    
-        for(int i=0 ; i<v ; i++){
-            distance[i] = (int)(1e8);
-        }
+        Arrays.fill(distance, (int)(1e8));
+        
         distance[s] = 0;
         pq.add(new Pair(0,s));
     
@@ -64,8 +62,9 @@ public class Dijkstra {
                     temp = adjNode;
                     break;
                 }
+            }
         }   
-    }   
+        path.add(s);   
             System.out.println("Path taken from " + s + " to " + d + " is: ");
             for(int i=path.size()-1 ; i>=0 ; i--){
                 System.out.print(path.get(i) + " ");
