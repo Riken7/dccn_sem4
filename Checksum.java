@@ -1,6 +1,9 @@
+import java.util.*;
 public class Checksum {
     public static void main(String[] args) {
-        String data = "Hello";
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the data string : ");
+        String data = sc.nextLine();
         int[] ascii = Ascii(data);
         String[] binary = Binary(ascii);
         for(int i=0 ; i<ascii.length ; i++) {
